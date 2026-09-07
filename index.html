@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<!-- DOCTYPE tells the browser to use modern HTML. HTML supplies structure and meaning. -->
+<html lang="en">
+<head>
+  <!-- UTF-8 supports special characters; viewport makes phone layouts use the device width. -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="An interactive portfolio tutorial. Learn HTML, CSS, and JavaScript by exploring the page and its commented source files.">
+  <title>Portfolio, explained — A living web tutorial</title>
+  <!-- This relative path loads the presentation layer from the same folder. -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- defer downloads the script without blocking HTML and runs it after HTML is parsed. -->
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <!-- A keyboard user can skip the repeated navigation and go straight to main content. -->
+  <a class="skip-link" href="#main">Skip to content</a>
+  <!-- header and nav are semantic landmarks, giving the page meaningful regions. -->
+  <header class="site-header">
+    <a class="wordmark" href="#home" aria-label="Portfolio explained, back to top"><span class="logo-mark" aria-hidden="true">p<span>.</span></span> portfolio<span class="wordmark-light"> / explained</span></a>
+    <nav aria-label="Main navigation">
+      <!-- #about is an in-page anchor: the browser jumps to the matching id. No JS needed. -->
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact <span aria-hidden="true">↗</span></a>
+    </nav>
+    <!-- hidden keeps a JS-only control unavailable until the script initializes it. -->
+    <button class="notes-toggle" type="button" aria-pressed="true" hidden><span class="status-dot" aria-hidden="true"></span> Learning notes <span class="toggle-state">ON</span></button>
+  </header>
+
+  <main id="main">
+    <section class="hero section-wrap" id="home" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> A PORTFOLIO YOU CAN LEARN FROM</p>
+        <h1 id="hero-title">Looks like a portfolio.<br>Reads like a <em>lesson.</em></h1>
+        <p class="hero-description">Every website starts with a few simple ideas. Explore this one to see how structure, style, and a little interaction become something real.</p>
+        <div class="hero-actions">
+          <a class="button button-dark" href="#projects">Explore the building blocks <span aria-hidden="true">↓</span></a>
+          <a class="text-link" href="#workbench">Peek at the code <span aria-hidden="true">↗</span></a>
+        </div>
+        <p class="learning-note"><span class="note-label">HTML</span> These are links, not buttons. Their <code>href="#…"</code> values navigate to sections on this page.</p>
+      </div>
+      <!-- This illustration is built from HTML and CSS, so there is no image to download. -->
+      <div class="blueprint" aria-label="Illustration showing HTML structure, CSS styling, and JavaScript behavior as layers of a website" role="img">
+        <div class="blueprint-top"><span>THE ANATOMY OF A WEBSITE</span><span>FIG. 01</span></div>
+        <div class="layer layer-html"><span class="layer-icon">&lt;/&gt;</span><div><strong>HTML</strong><small>The structure</small></div><span class="layer-number">01</span></div>
+        <div class="layer layer-css"><span class="layer-icon">{ }</span><div><strong>CSS</strong><small>The personality</small></div><span class="layer-number">02</span></div>
+        <div class="layer layer-js"><span class="layer-icon">( )</span><div><strong>JavaScript</strong><small>The interaction</small></div><span class="layer-number">03</span></div>
+        <div class="blueprint-bottom"><span class="crosshair">+</span> THREE LAYERS. ONE EXPERIENCE. <span class="crosshair">+</span></div>
+      </div>
+      <div class="hero-foot"><span>NO FRAMEWORKS. NO MAGIC. JUST THE WEB.</span><span>Scroll, inspect, experiment <span aria-hidden="true">↓</span></span></div>
+    </section>
+
+    <section class="about-section section-wrap" id="about" aria-labelledby="about-title">
+      <div class="section-intro"><p class="eyebrow">01 / THE INTRODUCTION</p><h2 id="about-title">A little about<br>this “person.”</h2><p>On a real portfolio, this is where you introduce yourself. Here, meet the three things that make this page work.</p></div>
+      <div class="about-content">
+        <p class="about-statement">Hi, I’m a website.<br>My skeleton is <span class="highlight-html">HTML</span>, my wardrobe is <span class="highlight-css">CSS</span>, and my party tricks are <span class="highlight-js">JavaScript</span>.</p>
+        <p>You’re looking at a working example, with the instructions left in. Follow the little labels, try the controls, then open the source files to connect what you see with how it’s made.</p>
+        <!-- A list groups related items. These are labels, not interactive controls. -->
+        <ul class="skill-list" aria-label="Technologies used"><li>Semantic HTML</li><li>Responsive CSS</li><li>Vanilla JavaScript</li><li>Built for curiosity</li></ul>
+        <aside class="learning-note"><span class="note-label">HTML + CSS</span> A <code>&lt;section&gt;</code> groups this topic. CSS Grid places the intro beside the text, then stacks them on smaller screens.</aside>
+      </div>
+    </section>
+
+    <section class="projects-section section-wrap" id="projects" aria-labelledby="projects-title">
+      <div class="section-heading"><div><p class="eyebrow">02 / THE PROJECT GALLERY</p><h2 id="projects-title">Small pieces. Big possibilities.</h2></div><p>A portfolio usually shows your work.<br>This one shows how the work works.</p></div>
+      <!-- Buttons change local state; links navigate. JS filters articles by data-category. -->
+      <div class="filter-bar" hidden role="group" aria-label="Filter examples by technology">
+        <button type="button" class="filter-button" data-filter="all" aria-pressed="true">All examples <span>03</span></button>
+        <button type="button" class="filter-button" data-filter="html" aria-pressed="false">HTML</button>
+        <button type="button" class="filter-button" data-filter="css" aria-pressed="false">CSS</button>
+        <button type="button" class="filter-button" data-filter="js" aria-pressed="false">JavaScript</button>
+      </div>
+      <div class="project-grid">
+        <!-- article makes each example a self-contained item. data-* stores metadata for JS. -->
+        <article class="project-card" data-category="html">
+          <div class="project-art art-html" aria-hidden="true"><div class="mini-browser"><div class="browser-dots"><i></i><i></i><i></i></div><div class="mini-layout"><div>&lt;header&gt;</div><div>&lt;main&gt;</div><div>&lt;footer&gt;</div></div></div><span class="art-index">001</span></div>
+          <div class="card-content"><span class="category category-html">HTML / STRUCTURE</span><h3>A place for everything.</h3><p>Headings, sections, and links give a page its meaning. Good structure is the first thing you build.</p><a class="card-link" href="#lesson-html">Explore the structure <span aria-hidden="true">↗</span></a></div>
+        </article>
+        <article class="project-card" data-category="css">
+          <div class="project-art art-css" aria-hidden="true"><div class="swatch-composition"><div class="swatch swatch-one">Aa<span>#D9E8CB</span></div><div class="swatch swatch-two">Aa<span>#F0BBA5</span></div><div class="swatch swatch-three">Aa<span>#272B25</span></div></div><span class="art-index">002</span></div>
+          <div class="card-content"><span class="category category-css">CSS / PRESENTATION</span><h3>Give it some personality.</h3><p>Color, type, spacing, and layout turn plain content into a page that feels considered.</p><a class="card-link" href="#lesson-css">Explore the styling <span aria-hidden="true">↗</span></a></div>
+        </article>
+        <article class="project-card" data-category="js">
+          <div class="project-art art-js" aria-hidden="true"><div class="interaction-art"><span>YOUR NEXT CLICK</span><div class="drawn-button">Make something happen <b>↗</b></div><span class="cursor-shape">↖</span><span class="event-label">click → update → smile</span></div><span class="art-index">003</span></div>
+          <div class="card-content"><span class="category category-js">JS / BEHAVIOR</span><h3>A little back-and-forth.</h3><p>Listen for an action, then update the page. That’s the idea behind the filters just above.</p><a class="card-link" href="#lesson-js">Explore the interaction <span aria-hidden="true">↗</span></a></div>
+        </article>
+      </div>
+      <!-- aria-live announces filter results to screen readers without moving keyboard focus. -->
+      <p class="filter-status" aria-live="polite" aria-atomic="true">Showing all 3 examples.</p>
+      <p class="learning-note"><span class="note-label">JAVASCRIPT</span> The filters use <code>addEventListener('click', …)</code> to show matching cards. Nothing reloads, and no data leaves your browser.</p>
+    </section>
+
+    <section class="workbench section-wrap" id="workbench" aria-labelledby="workbench-title">
+      <div class="section-heading"><div><p class="eyebrow">03 / UNDER THE HOOD</p><h2 id="workbench-title">Meet the code behind the page.</h2></div><p>Small examples. Plain-English explanations.<br>Open the files for the full picture.</p></div>
+      <!-- Native details/summary provide keyboard-accessible expand/collapse without JavaScript. -->
+      <details class="code-lesson" id="lesson-html" open>
+        <summary><span class="lesson-number">01</span><span>HTML gives things meaning</span><span class="file-tag">index.html</span></summary>
+        <div class="lesson-body"><div><h3>A link with a destination.</h3><p>The <code>&lt;a&gt;</code> element creates a link. Its <code>href</code> attribute tells the browser where to go. A value starting with <code>#</code> points to an element’s <code>id</code> on this page.</p><p>Try the real link below. It takes you to Contact using the browser’s built-in navigation.</p><a class="text-link" href="#contact">Jump to Contact ↓</a></div><pre><code><span class="code-comment">&lt;!-- #contact matches the section's id. --&gt;</span>
+&lt;a href="#contact"&gt;
+  Jump to Contact
+&lt;/a&gt;
+
+<span class="code-comment">&lt;!-- A named destination on this page. --&gt;</span>
+&lt;section id="contact"&gt;
+  ...
+&lt;/section&gt;</code></pre></div>
+      </details>
+      <details class="code-lesson" id="lesson-css" open>
+        <summary><span class="lesson-number">02</span><span>CSS turns a list into a layout</span><span class="file-tag">styles.css</span></summary>
+        <div class="lesson-body"><div><h3>Three columns, one rule.</h3><p>A selector such as <code>.project-grid</code> targets an HTML class. Inside its braces, declarations describe how that element looks.</p><p><code>display: grid</code> creates a grid. Three equal tracks hold the project cards, and <code>gap</code> adds space between them. Below 760 pixels, a media query changes this to one column. Resize your window to try it.</p></div><pre><code><span class="code-comment">/* A period selects an HTML class. */</span>
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+<span class="code-comment">/* Adapt to a narrower viewport. */</span>
+@media (max-width: 760px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+}</code></pre></div>
+      </details>
+      <details class="code-lesson" id="lesson-js" open>
+        <summary><span class="lesson-number">03</span><span>JavaScript responds to you</span><span class="file-tag">script.js</span></summary>
+        <div class="lesson-body"><div><h3>An event becomes a change.</h3><p><code>querySelector</code> finds an HTML element. <code>addEventListener</code> runs a function when you click it. The function adds one to a number and updates the visible text.</p><button type="button" class="button demo-button" id="counter-button" hidden>Try a click <span aria-hidden="true">+</span></button><p id="counter-output" class="counter-output" role="status" aria-live="polite" aria-atomic="true">Count: 0</p><p class="small-copy">This number lives in memory. Reloading the page resets it.</p><noscript><p>Enable JavaScript to try the counter, project filters, and learning-notes switch. The rest of this page works without it.</p></noscript></div><pre><code><span class="code-comment">// Find two elements; start counting at zero.</span>
+const button = document.querySelector('#counter-button');
+const output = document.querySelector('#counter-output');
+let count = 0;
+
+<span class="code-comment">// Run this function on each click.</span>
+button.addEventListener('click', () =&gt; {
+  count += 1;
+  output.textContent = `Count: ${count}`;
+});</code></pre></div>
+      </details>
+      <p class="learning-note"><span class="note-label">HTML</span> Each lesson uses <code>&lt;details&gt;</code> and <code>&lt;summary&gt;</code>. Click its heading to collapse or expand it—this interaction needs no JavaScript.</p>
+    </section>
+
+    <section class="contact-section section-wrap" id="contact" aria-labelledby="contact-title">
+      <div><p class="eyebrow">04 / THE NEXT CONVERSATION</p><h2 id="contact-title">Every good portfolio<br>opens a <em>door.</em></h2><p>This is where you’d invite someone to get in touch.<br>For now, it’s a lesson in a very useful kind of link.</p></div>
+      <div class="contact-card"><span class="category">THE EMAIL LINK</span><h3>Say hello. See how.</h3>
+        <!-- mailto hands a draft to the user's configured email handler; it does not send email.
+             example.com is a demonstration domain. Replace this address before publishing. -->
+        <a class="email-link" href="mailto:hello@example.com?subject=Hello%20from%20your%20portfolio">hello@example.com <span aria-hidden="true">↗</span></a>
+        <!-- This essential behavior explanation stays visible even when learning notes are off. -->
+        <p>Opens your configured email app with a draft addressed to <strong>hello@example.com</strong> and the subject “Hello from your portfolio.” It does not send anything automatically.</p><p class="small-copy">Demo address—replace it with your own in <code>index.html</code>. If no email app is configured, the link may not open a draft.</p>
+        <div class="email-code"><code>&lt;a href="mailto:hello@example.com?subject=Hello%20from%20your%20portfolio"&gt;</code></div>
+        <p class="learning-note"><span class="note-label">HTML</span> <code>mailto:</code> selects email instead of a web page. <code>?subject=</code> pre-fills the subject; <code>%20</code> represents a space. No JavaScript or server required.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- footer closes the page with supporting information and another native anchor link. -->
+  <footer class="site-footer section-wrap"><a class="wordmark" href="#home"><span class="logo-mark" aria-hidden="true">p<span>.</span></span> portfolio / explained</a><p>Built with curiosity, HTML, CSS &amp; JavaScript.</p><a class="text-link" href="#home">Back to top ↑</a></footer>
+</body>
+</html>
